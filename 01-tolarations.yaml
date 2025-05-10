@@ -7,6 +7,7 @@ spec:
   # docker run -d --name nginx nginx
   - name: nginx
     image: nginx:stable-perl
+  # node tainted and labeled but pod scheduling is not guarentee so we will use tolarations
   nodeSelector:
     hardware: gpu
   tolerations:
