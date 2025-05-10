@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+spec:
+  affinity:
+    nodeAffinity:
+    # soft rule , if condition not satisfied then also pod scheduled on any node
+      preferredDuringSchedulingIgnoredDuringExecution:
+      - weight: 3 # based on weightage pod is scheduled 
+        preference:
+          matchExpressions:
+          - key: another-node-label-key
+            operator: In
+            values:
+            - another-node-label-value
+  containers:
+  - name: nginx
+    image: nginx:stable-perl
+  tolerations:
+  - key: "hardware"
+    operator: "Equal"
+    value: "gpu"
+    effect: "NoSchedule"
+    
