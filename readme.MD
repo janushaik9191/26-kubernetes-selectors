@@ -1,37 +1,39 @@
 # Use of Selectors in Nodes and Pods
 
 Taint the node
-    command used for tainting the node
-    ```
-        kubectl taint nodes node1 key1=value1:NoSchedule
-    ```
-    command used for un taint the node
-    ```   
-        kubectl taint nodes node1 key1=value1:NoSchedule-
-    ```    
-    command used for noexecution of currently runnig pods
-    ```
-        kubectl taint nodes node1 key=value:NoExecute
-    ```
-    command used for remove noexecution option of currently runnig pods
-    ```
-        kubectl taint nodes node1 key=value:NoExecute-
-    ```
+
+command used for tainting the node
+
+    kubectl taint nodes node1 key1=value1:NoSchedule
+
+command used for un taint the node
+
+    kubectl taint nodes node1 key1=value1:NoSchedule-
+    
+command used for noexecution of currently runnig pods
+
+    kubectl taint nodes node1 key=value:NoExecute
+
+command used for remove noexecution option of currently runnig pods
+
+    kubectl taint nodes node1 key=value:NoExecute-
+
 
 Tolarance of the pods 
-        by using tolarance option we may schedule the pods to the tainted node but not guarentee
+    by using tolarance option we may schedule the pods to the tainted node but not guarentee
 
 Labeling
-        by using label concept we can schedule the pods on tainted nodes with less options
+    by using label concept we can schedule the pods on tainted nodes with less options
     command for label the node 
-    ```
-        kubectl label nodes <your-node-name> hardware=gpu
-    ```
-        after labeling the node, node-selector should be defined in container level
+
+    kubectl label nodes <your-node-name> hardware=gpu
+
+    after labeling the node, node-selector should be defined in container level
 
 Affinity(node and pod)
 
 node affinity is two types
+
     1 . requried during scheduling (need to satisfy the taint condition)
     2 . prefferd during scheduling (tries for the defined condition if not found schedule in any another availabe node)
 
