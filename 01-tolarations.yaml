@@ -14,4 +14,3 @@ spec:
     operator: "Equal"
     value: "gpu"
     effect: "NoSchedule"
-    
