@@ -37,12 +37,15 @@ after labeling the node, node-selector should be defined in container level
 # node affinity is two types
 
 1 . requried during scheduling (need to satisfy the taint condition)
+
 2 . prefferd during scheduling (tries for the defined condition if not found schedule in any another availabe node)
 
 # pod affinity
 
 1 . first one pod is scheduled in a node
+
 2 . second pod is also scheduled into a same node based on label condition
+
 3 . third node is scheduled in a different node by using anti affinity definition
 
 popular use case for affinity and anti affinity with cache(pod) and pods
