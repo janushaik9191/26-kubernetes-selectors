@@ -1,6 +1,6 @@
 # Use of Selectors in Nodes and Pods
 
-Taint the node
+# Taint the node
 
 command used for tainting the node
 
@@ -19,11 +19,11 @@ command used for remove noexecution option of currently runnig pods
     kubectl taint nodes node1 key=value:NoExecute-
 
 
-Tolarance of the pods
+# Tolarance of the pods
 
 by using tolarance option we may schedule the pods to the tainted node but not guarentee
 
-Labeling
+# Labeling
 
 by using label concept we can schedule the pods on tainted nodes with less options
 command for label the node 
@@ -32,14 +32,14 @@ command for label the node
 
 after labeling the node, node-selector should be defined in container level
 
-Affinity(node and pod)
+# Affinity(node and pod)
 
-node affinity is two types
+# node affinity is two types
 
 1 . requried during scheduling (need to satisfy the taint condition)
 2 . prefferd during scheduling (tries for the defined condition if not found schedule in any another availabe node)
 
-pod affinity
+# pod affinity
 
 1 . first one pod is scheduled in a node
 2 . second pod is also scheduled into a same node based on label condition
